@@ -1,0 +1,501 @@
+{
+  "contractName": "mortal",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "kill",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610114806100536000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b348015604f57600080fd5b5060566058565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e6576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a72305820d9067b132531b4734c6e3ad7111ddaffa3fb62ad22c7c4d8a644c069a4ac5fd80029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b348015604f57600080fd5b5060566058565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e6576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a72305820d9067b132531b4734c6e3ad7111ddaffa3fb62ad22c7c4d8a644c069a4ac5fd80029",
+  "sourceMap": "49:148:1:-;;;199:10:2;193:5;;:16;;;;;;;;;;;;;;;;;;49:148:1;;;;;;",
+  "deployedSourceMap": "49:148:1:-;;;;;;;;;;;;;;;;;;;;;;;;80:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;80:115:1;;;;;;;132:5;;;;;;;;;;;120:17;;:10;:17;;;117:72;;;172:5;;;;;;;;;;;159:19;;;117:72;80:115::o",
+  "source": "pragma solidity ^0.4.19;\n\nimport \"./owned.sol\";\n\ncontract mortal is owned\n{\n    function kill() public\n    {\n        if(msg.sender==owner)\n        {\n          selfdestruct(owner);\n        }\n    }\n}\n",
+  "sourcePath": "/home/mukul/TruffleProject/contracts/mortal.sol",
+  "ast": {
+    "absolutePath": "/home/mukul/TruffleProject/contracts/mortal.sol",
+    "exportedSymbols": {
+      "mortal": [
+        201
+      ]
+    },
+    "id": 202,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 183,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/mukul/TruffleProject/contracts/owned.sol",
+        "file": "./owned.sol",
+        "id": 184,
+        "nodeType": "ImportDirective",
+        "scope": 202,
+        "sourceUnit": 226,
+        "src": "26:21:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 185,
+              "name": "owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 225,
+              "src": "68:5:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_owned_$225",
+                "typeString": "contract owned"
+              }
+            },
+            "id": 186,
+            "nodeType": "InheritanceSpecifier",
+            "src": "68:5:1"
+          }
+        ],
+        "contractDependencies": [
+          225
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 201,
+        "linearizedBaseContracts": [
+          201,
+          225
+        ],
+        "name": "mortal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 199,
+              "nodeType": "Block",
+              "src": "107:88:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 189,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 240,
+                        "src": "120:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 190,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "120:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 191,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 205,
+                      "src": "132:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "120:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 198,
+                  "nodeType": "IfStatement",
+                  "src": "117:72:1",
+                  "trueBody": {
+                    "id": 197,
+                    "nodeType": "Block",
+                    "src": "147:42:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 194,
+                              "name": "owner",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 205,
+                              "src": "172:5:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 193,
+                            "name": "selfdestruct",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 248,
+                            "src": "159:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 195,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "159:19:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 196,
+                        "nodeType": "ExpressionStatement",
+                        "src": "159:19:1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 200,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "kill",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 187,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "93:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "107:0:1"
+            },
+            "scope": 201,
+            "src": "80:115:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 202,
+        "src": "49:148:1"
+      }
+    ],
+    "src": "0:198:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/mukul/TruffleProject/contracts/mortal.sol",
+    "exportedSymbols": {
+      "mortal": [
+        201
+      ]
+    },
+    "id": 202,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 183,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/mukul/TruffleProject/contracts/owned.sol",
+        "file": "./owned.sol",
+        "id": 184,
+        "nodeType": "ImportDirective",
+        "scope": 202,
+        "sourceUnit": 226,
+        "src": "26:21:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 185,
+              "name": "owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 225,
+              "src": "68:5:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_owned_$225",
+                "typeString": "contract owned"
+              }
+            },
+            "id": 186,
+            "nodeType": "InheritanceSpecifier",
+            "src": "68:5:1"
+          }
+        ],
+        "contractDependencies": [
+          225
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 201,
+        "linearizedBaseContracts": [
+          201,
+          225
+        ],
+        "name": "mortal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 199,
+              "nodeType": "Block",
+              "src": "107:88:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 192,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 189,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 240,
+                        "src": "120:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 190,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "120:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 191,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 205,
+                      "src": "132:5:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "120:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 198,
+                  "nodeType": "IfStatement",
+                  "src": "117:72:1",
+                  "trueBody": {
+                    "id": 197,
+                    "nodeType": "Block",
+                    "src": "147:42:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 194,
+                              "name": "owner",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 205,
+                              "src": "172:5:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "id": 193,
+                            "name": "selfdestruct",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 248,
+                            "src": "159:12:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_$returns$__$",
+                              "typeString": "function (address)"
+                            }
+                          },
+                          "id": 195,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "159:19:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 196,
+                        "nodeType": "ExpressionStatement",
+                        "src": "159:19:1"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 200,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "kill",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 187,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "93:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "107:0:1"
+            },
+            "scope": 201,
+            "src": "80:115:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 202,
+        "src": "49:148:1"
+      }
+    ],
+    "src": "0:198:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-01T13:30:19.068Z"
+}
